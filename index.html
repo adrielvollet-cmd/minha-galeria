@@ -5,92 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria Gas Sales Piacenza</title>
     <style>
-        /* Estilização Geral */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0;
-            padding: 20px;
         }
 
         h1 {
-            color: #d32f2f; /* Vermelho característico do Piacenza */
+            color: #e30613; /* Vermelho característico do Piacenza */
             text-transform: uppercase;
-            border-bottom: 3px solid #d32f2f;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #0054a6; /* Azul do time */
             padding-bottom: 10px;
         }
 
-        /* Container da Galeria */
-        .gallery {
+        .gallery-container {
             display: grid;
-            /* Define 1 coluna fixa e 3 linhas */
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(3, auto);
-            gap: 20px;
-            max-width: 500px;
+            /* Define 3 colunas de tamanhos iguais */
+            grid-template-columns: repeat(3, 1fr);
+            /* Define 6 linhas com altura de 250px */
+            grid-template-rows: repeat(6, 250px);
+            gap: 15px;
+            max-width: 1000px;
             width: 100%;
-            margin-top: 20px;
         }
 
-        /* Estilo dos itens da Galeria */
         .gallery-item {
-            position: relative;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            background-color: #fff;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #ddd;
+            position: relative;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 300px;
-            object-fit: cover; /* Mantém a proporção da foto sem distorcer */
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
             display: block;
         }
 
-        .caption {
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            color: #333;
-            background: white;
+        /* Efeito de hover (passar o mouse) */
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
-        /* Responsividade para telas maiores (opcional) */
-        @media (min-width: 768px) {
-            .gallery {
-                max-width: 400px;
+        .gallery-item::after {
+            content: "Piacenza Volley";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(227, 6, 19, 0.7);
+            color: white;
+            padding: 5px;
+            font-size: 12px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
 
-    <h1>Gas Sales Piacenza</h1>
+    <h1>Gas Sales Piacenza - Galeria</h1>
 
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/500x300/d32f2f/ffffff?text=Jogador+1" alt="Jogador Piacenza 1">
-            <div class="caption">Ataque Potente</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/500x300/d32f2f/ffffff?text=Jogador+2" alt="Jogador Piacenza 2">
-            <div class="caption">Defesa e Recepção</div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/500x300/d32f2f/ffffff?text=Jogador+3" alt="Jogador Piacenza 3">
-            <div class="caption">Levantamento de Mestre</div>
-        </div>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+1" alt="Piacenza 1"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+2" alt="Piacenza 2"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+3" alt="Piacenza 3"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+4" alt="Piacenza 4"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+5" alt="Piacenza 5"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+6" alt="Piacenza 6"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+7" alt="Piacenza 7"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+8" alt="Piacenza 8"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+9" alt="Piacenza 9"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+10" alt="Piacenza 10"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+11" alt="Piacenza 11"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+12" alt="Piacenza 12"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+13" alt="Piacenza 13"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+14" alt="Piacenza 14"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+15" alt="Piacenza 15"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+16" alt="Piacenza 16"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+17" alt="Piacenza 17"></div>
+        <div class="gallery-item"><img src="https://via.placeholder.com/400x300?text=Jogador+18" alt="Piacenza 18"></div>
     </div>
 
 </body>
