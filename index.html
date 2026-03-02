@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria - Gas Sales Piacenza</title>
+    <title>Galeria Gas Sales Piacenza</title>
     <style>
         /* Estilização Geral */
         body {
@@ -12,45 +12,47 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
             margin: 0;
+            padding: 20px;
         }
 
         h1 {
-            color: #e30613; /* Vermelho Piacenza */
+            color: #d32f2f; /* Vermelho característico do Piacenza */
             text-transform: uppercase;
-            border-bottom: 3px solid #004595; /* Azul Piacenza */
+            border-bottom: 3px solid #d32f2f;
             padding-bottom: 10px;
         }
 
         /* Container da Galeria */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 imagens por linha */
-            grid-template-rows: repeat(3, auto);    /* 3 linhas */
+            /* Define 1 coluna fixa e 3 linhas */
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
             gap: 20px;
-            max-width: 800px;
+            max-width: 500px;
             width: 100%;
             margin-top: 20px;
         }
 
-        /* Estilo dos Cards de Imagem */
-        .image-card {
-            background: #fff;
-            border-radius: 8px;
+        /* Estilo dos itens da Galeria */
+        .gallery-item {
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background-color: #fff;
             transition: transform 0.3s ease;
         }
 
-        .image-card:hover {
+        .gallery-item:hover {
             transform: scale(1.03);
         }
 
-        .image-card img {
+        .gallery-item img {
             width: 100%;
-            height: 250px;
-            object-fit: cover;
+            height: 300px;
+            object-fit: cover; /* Mantém a proporção da foto sem distorcer */
             display: block;
         }
 
@@ -59,47 +61,35 @@
             text-align: center;
             font-weight: bold;
             color: #333;
-            background: #fff;
+            background: white;
         }
 
-        /* Responsividade para celulares */
-        @media (max-width: 600px) {
+        /* Responsividade para telas maiores (opcional) */
+        @media (min-width: 768px) {
             .gallery {
-                grid-template-columns: 1fr; /* Vira 1 coluna em telas pequenas */
+                max-width: 400px;
             }
         }
     </style>
 </head>
 <body>
 
-    <h1>Gas Sales Piacenza - Galeria</h1>
+    <h1>Gas Sales Piacenza</h1>
 
     <div class="gallery">
-        <div class="image-card">
-            <img src="https://via.placeholder.com/400x300?text=Ataque+Piacenza" alt="Ação de Jogo">
-            <div class="caption">Poder de Ataque</div>
-        </div>
-        <div class="image-card">
-            <img src="https://via.placeholder.com/400x300?text=Defesa+Piacenza" alt="Defesa">
-            <div class="caption">Muralha Defensiva</div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/500x300/d32f2f/ffffff?text=Jogador+1" alt="Jogador Piacenza 1">
+            <div class="caption">Ataque Potente</div>
         </div>
 
-        <div class="image-card">
-            <img src="https://via.placeholder.com/400x300?text=Torcida" alt="Torcida">
-            <div class="caption">Apoio da Torcida</div>
-        </div>
-        <div class="image-card">
-            <img src="https://via.placeholder.com/400x300?text=Treinamento" alt="Treino">
-            <div class="caption">Foco no Treino</div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/500x300/d32f2f/ffffff?text=Jogador+2" alt="Jogador Piacenza 2">
+            <div class="caption">Defesa e Recepção</div>
         </div>
 
-        <div class="image-card">
-            <img src="https://via.placeholder.com/400x300?text=Vitoria" alt="Comemoração">
-            <div class="caption">Espírito de Equipe</div>
-        </div>
-        <div class="image-card">
-            <img src="https://via.placeholder.com/400x300?text=Mascote" alt="Mascote">
-            <div class="caption">Identidade</div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/500x300/d32f2f/ffffff?text=Jogador+3" alt="Jogador Piacenza 3">
+            <div class="caption">Levantamento de Mestre</div>
         </div>
     </div>
 
